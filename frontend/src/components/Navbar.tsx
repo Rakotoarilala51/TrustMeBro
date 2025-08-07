@@ -11,22 +11,8 @@ const links:route[]=[
 export default function Navbar(){
 
     return (
-        <div className="bg-white w-full p-1 flex justify-between rounded-xl">
-            <Link href="/">
-             <Image alt="" src="/Logo.png" width={80} height={50}/>
-            </Link>
-            
-            <div className="flex justify-between space-x-5">
-                {
-                    links.map((link, idx)=>(
-                         <Link key={idx} href={link.href} className="font-bold">{link.label}</Link>
-                    ))
-                }
-               
-            </div>
-            <div>
-
-            </div>
+        <div className="w-full p-1 flex justify-center items-center">
+            <Link href={"#"}>News Summary</Link>
         </div>
     );
 }
