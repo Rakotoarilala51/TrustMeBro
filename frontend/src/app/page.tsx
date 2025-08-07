@@ -1,53 +1,25 @@
 "use client";
-
-import { motion } from "framer-motion";
-import Image from "next/image";
-import Card from "@/components/Card";
-import { TbFileCv } from "react-icons/tb";
-import { MdWorkOutline, MdRecordVoiceOver } from "react-icons/md";
-import { cardProps} from "@/types";
-
-const cardList:cardProps[]=[
-  {
-    icon:TbFileCv,
-    title:"AI CV summary",
-    description:"get a full cv breakpoint by ai"
-  },
-  {
-    icon:MdWorkOutline,
-    title:"Job Matching",
-    description:"Check how much your skills match with a job offer"
-  },
-  {
-    icon:MdRecordVoiceOver,
-    title:"Interview Prep",
-    description:"Prepare HR interview + a little bit of technical interview based on you cv"
-  },
-  {
-    icon:MdRecordVoiceOver,
-    title:"Interview Prep",
-    description:"Prepare HR interview + a little bit of technical interview based on you cv"
-  }
-]
-const contenairVarient = {
-  hidden:{},
-  visible:{
-    transition:{
-      staggerChildren: 0.3,
-    }
-  }
-}
-const cardVarient={
-  hidden:{opacity:0, y: 30},
-    visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, ease: "easeOut" },
-  },
-};
+import { FaRobot } from "react-icons/fa";
 export default function Home() {
   return (
-    <div>
+    <div className="flex flex-col space-y-2">
+        <div className="space-x-2 flex items-center justify-center">
+          <select name="Catégorie" id="" className="bg-white p-1 w-54 rounded-sm h-8">
+            <option value="Sport">Sport</option>
+            <option value="Tech"> Tech</option>
+            <option value="Politic">Politic</option>
+          </select>
+          <button className="bg-black p-1 rounded-lg text-white font-bold">Get News</button>
+        </div>
+        <div className=" flex items-center justify-center">
+        <div className="bg-white w-180 h-50 rounded-lg">
+            
+        </div>
+        </div>
+
+        <div className="ml-72">
+          <h3 className="font-bold text-sm">Read More:</h3>
+        </div>
     </div>
   )
 }
