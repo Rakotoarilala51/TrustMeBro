@@ -1,0 +1,45 @@
+# 📂 React (frontend)
+frontend/node_modules/
+frontend/.env
+frontend/.next/         # Next.js build
+frontend/dist/          # Vite build
+frontend/build/         # Create React App build
+frontend/.cache/
+frontend/.DS_Store
+
+# 📂 Python (FastAPI app)
+app/__pycache__/
+app/*.pyc
+app/.DS_Store
+app/.env
+app/.venv/
+app/env/
+app/venv/
+app/.mypy_cache/
+app/.pytest_cache/
+app/.pdm.toml
+app/poetry.lock
+app/.idea/
+app/.vscode/
+app/.coverage
+app/coverage.xml
+app/htmlcov/
+
+# Hugging Face models (préférable de ne PAS les committer)
+app/models/
+app/huggingface/
+app/cache/
+app/.cache/huggingface/
+
+# PyTorch/Transformers caches
+~/.cache/torch/
+~/.cache/transformers/
+
+# Global
+*.log
+*.swp
+*.swo
+*.bak
+*.tmp
+.DS_Store
+Thumbs.db
