@@ -1,10 +1,13 @@
 from pydantic import BaseModel, Field, HttpUrl, validator
-from typing import Optional
+from typing import Optional, List
 from datetime import datetime
+from entities import NewsCategory
 
 class Source(BaseModel):
     id: Optional[str]
     name: str
+
+
 class News(BaseModel):
     source: Source
     title: str
@@ -30,3 +33,22 @@ class News(BaseModel):
             import re
             return re.sub(r'\s*\[\+\d+\s+chars\]$', '', v)
         return v
+
+class NewsResponse(BaseModel):
+    articles: List[News]
+    total_count: int
+    category: str
+
+
+class SummaryResponse(BaseModel):
+    summary: str
+    key_points: List[str]
+    category: str
+    articles_count: int
+
+
+class FetchAndSummaryRequest(BaseModel):
+    category: NewsCategory
+    country: str = "us"
+    page_size: int = 20
+    max_length: int = 200

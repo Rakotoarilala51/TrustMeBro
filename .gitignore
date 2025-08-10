@@ -26,7 +26,7 @@ app/coverage.xml
 app/htmlcov/
 
 # Hugging Face models (préférable de ne PAS les committer)
-app/models/
+app/ai-models/
 app/huggingface/
 app/cache/
 app/.cache/huggingface/

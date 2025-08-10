@@ -4,7 +4,7 @@ from langchain_community.vectorstores import Chroma
 class Retrieve:
     def __init__(self):
         self.embedding_function = HuggingFaceEmbeddings(
-            model_name = " model_name=./models/all-MiniLM-L6-v2"
+            model_name = " model_name=./ai-models/all-MiniLM-L6-v2"
         )
         self.vector_stores = Chroma(
             collection_name="cv_collection",

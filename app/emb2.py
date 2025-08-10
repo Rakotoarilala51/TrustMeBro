@@ -3,7 +3,7 @@ from langchain_community.vectorstores import Chroma
 
 # 1️⃣ Charger le modèle à partir du dossier local
 embedding_function = HuggingFaceEmbeddings(
-    model_name="./models/all-MiniLM-L6-v2"
+    model_name="./ai-models/all-MiniLM-L6-v2"
 )
 
 # 2️⃣ Initialiser Chroma
