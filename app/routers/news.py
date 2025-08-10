@@ -1,10 +1,10 @@
 from fastapi import APIRouter
 import requests
-from services.News_Service.News import News
+from services.News_Service.News import NewsService
 
 router = APIRouter(prefix="/news")
 @router.get("/")
 async def news():
-    nouveau = News()
-    response = nouveau.fetch_news_by_category("sport")
+    nouveau = NewsService()
+    response = nouveau.fetch_news_by_category("sport", "en")
     return response
