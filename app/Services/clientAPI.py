@@ -10,6 +10,7 @@ class NewsAPIClient:
     def __init__(self):
         load_dotenv()
         self.api_key = os.getenv("NEWS_KEY")
+        self.base_url = "https://newsapi.org/v2"
     def get_top_headlines(self, request:NewsRequest):
         url = f"{self.base_url}/top-headlines"
         params = {
@@ -17,11 +18,9 @@ class NewsAPIClient:
             "category":request.category,
             "language":request.language
         }
-
         try:
             response = requests.get(url, params=params, timeout=30)
             response.raise_for_status()
-
             data = response.json()
             if data["status"] != "ok":
                 raise Exception(f"NewsAPI error: {data.get('message', 'Unknown error')}")
@@ -47,3 +46,4 @@ class NewsAPIClient:
             article_data.get(field) not in ["[Removed]", None, ""]
             for field in required_fields
         )
+
